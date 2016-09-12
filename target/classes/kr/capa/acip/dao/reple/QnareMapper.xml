@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Qnare">
+	<resultMap type="Qnare" id="QnareResultMap">
+		<result column="qnum" property="qnum" />
+		<result column="qrenum" property="qrenum" />
+		<result column="mid" property="mid" />
+		<result column="qrecontent" property="qrecontent" />
+		<result column="qreregdate" property="qreregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<select id="selectQnareAll" parameterType="Qnare"
+		resultMap="QnareResultMap">
+		select * from qnare
+		where qnum = #{qnum} and lnum=#{lnum}
+		order by qrenum asc
+	</select> 
+
+	<insert id="insertQnare" parameterType="Qnare">
+		insert into
+		qnare(qnum, qrenum, mid, qrecontent, qreregdate, lnum)
+		values(#{qnum},qreseq.nextval,#{mid}, #{qrecontent},sysdate,#{lnum})
+	</insert>
+
+	<update id="updateQnare" parameterType="Qnare">
+		update qnare 
+		set	qrecontent=#{qrecontent}, qreregdate=sysdate 
+		where qrenum=#{qrenum}
+	</update>
+	
+	<delete id="deleteQnare" parameterType="int">
+		delete from qnare
+		where qrenum=#{qrenum}
+	</delete>
+
+</mapper>  
+
+      

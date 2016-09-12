@@ -1,0 +1,533 @@
+/*!
+ * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+1
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.navbar-default, a {
+	-webkit-transition: all .35s;
+	-moz-transition: all .35s
+}
+
+header, header .header-content {
+	position: relative;
+	width: 100%;
+	text-align: center
+}
+
+body, html {
+	height: 100%;
+	width: 100%
+}
+
+body {
+	font-family: Merriweather, 'Helvetica Neue', Arial, sans-serif;
+	webkit-tap-highlight-color: #222
+}
+
+.btn, .navbar-default, .navbar-default, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+}
+
+hr {
+	border-color: #FFEBFE;
+	border-width: 3px;
+	max-width: 50px
+}
+
+hr.light {
+	border-color: #fff
+}
+
+a {
+	transition: all .35s;
+	color: #FFEBFE
+}
+
+a:focus, a:hover {
+	color: #eb3812
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 20px
+}
+
+.bg-primary1 {
+	background-color: #f4b2a6
+}
+
+.bg-primary2 {
+	background-color: #eccdb3
+}
+
+.bg-primary3 {
+	background-color: #c3ecee
+}
+
+.bg-primary4 {
+	background-color: #bcefd0
+}
+
+.bg-primary5 {
+	background-color: #a1e8e4
+}
+
+.bg-dark {
+	background-color: #222;
+	color: #fff
+}
+
+.text-faded {
+	color: rgba(255, 255, 255, .7)
+}
+
+section {
+	padding: 50px 0 
+	
+}
+
+aside {
+	padding: 0px 0
+}
+
+.no-padding {
+	padding: 0
+}
+
+.btn-default, .portfolio-box .portfolio-box-caption {
+	-webkit-transition: all .35s;
+	-moz-transition: all .35s
+}
+
+@media ( min-width :768px) {
+	.navbar-default {
+		background-color: transparent;
+		border-color: rgba(255, 255, 255, .3)
+	}
+	.navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
+		color: rgba(255, 255, 255, .7)
+	}
+	.navbar-default .nav>li>a:focus:hover, .navbar-default .nav>li>a:hover {
+		color: #fff
+	}
+	.navbar-default.affix {
+		background-color: #fff;
+		border-color: rgba(34, 34, 34, .05)
+	}
+	.navbar-default.affix {
+		color: #FFEBFE;
+		font-size: 14px
+	}
+	.navbar-default.affix:focus, .navbar-default.affix:hover {
+		color: #eb3812
+	}
+	.navbar-default.affix .nav>li>a, .navbar-default.affix .nav>li>a:focus {
+		color: #222
+	}
+	.navbar-default.affix .nav>li>a:focus:hover, .navbar-default.affix .nav>li>a:hover
+		{
+		color: #FFEBFE
+	}
+}
+
+header {
+	min-height: auto;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-image: url(../img/rand1.jpg);
+	color: #fff
+}
+
+header .header-content {
+	padding: 100px 15px
+}
+
+header .header-content .header-content-inner h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 30px
+}
+
+header .header-content .header-content-inner hr {
+	margin: 30px auto
+}
+
+header .header-content .header-content-inner p {
+	font-weight: 300;
+	color: rgba(255, 255, 255, .7);
+	font-size: 16px;
+	margin-bottom: 50px
+}
+
+@media ( min-width :768px) {
+	header {
+		min-height: 100%
+	}
+	header .header-content {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		padding: 0 50px
+	}
+	header .header-content .header-content-inner {
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto
+	}
+	header .header-content .header-content-inner h1 {
+		font-size: 50px
+	}
+	header .header-content .header-content-inner p {
+		font-size: 18px;
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto
+	}
+}
+
+.section-heading {
+	margin-top: 0
+}
+
+.service-box {
+	max-width: 400px;
+	margin: 50px auto 0
+}
+
+@media ( min-width :992px) {
+	.service-box {
+		margin: 20px auto 0
+	}
+}
+
+.service-box p {
+	margin-bottom: 0
+}
+
+.portfolio-box {
+	position: relative;
+	display: block;
+	max-width: 500px;
+	max-height: 400px;
+	margin: 0 auto
+}
+
+.portfolio-box .portfolio-box-caption {
+	color: #fff;
+	opacity: 0;
+	display: block;
+	background: #FFD9EC;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	transition: all .35s;
+	top: 50%;
+	transform: translateY(-50%)
+}
+
+.btn-default.active, .btn-default:active, .btn-primary.active,
+	.btn-primary:active, .open>.dropdown-toggle.btn-default, .open>.dropdown-toggle.btn-primary
+	{
+	background-image: none
+}
+
+.portfolio-box:hover .portfolio-box-caption {
+	opacity: 1
+}
+
+.portfolio-box:focus {
+	outline: 0
+}
+
+@media ( min-width :768px) {
+	.portfolio-box .portfolio-box-caption .project-category {
+		margin-top: 15%;
+		font-size: 46px
+	}
+	.portfolio-box .portfolio-box-caption .project-name {
+		font-size: 22px
+	}
+}
+
+.call-to-action h2 {
+	margin: 0 auto 20px
+}
+
+.text-primary {
+	color: #FFEBFE
+}
+
+.no-gutter>[class*=col-] {
+	padding-right: 0;
+	padding-left: 0
+}
+
+.btn-default {
+	color: #222;
+	background-color: #fff;
+	border-color: #fff;
+	transition: all .35s
+}
+
+.btn-default.active, .btn-default.focus, .btn-default:active,
+	.btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default
+	{
+	color: #222;
+	background-color: #f2f2f2;
+	border-color: #ededed
+}
+
+.btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled.focus,
+	.btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover,
+	.btn-default[disabled], .btn-default[disabled].active, .btn-default[disabled].focus,
+	.btn-default[disabled]:active, .btn-default[disabled]:focus,
+	.btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active,
+	fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active,
+	fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover
+	{
+	background-color: #fff;
+	border-color: #fff
+}
+
+.btn-default .badge {
+	color: #fff;
+	background-color: #222
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #fc6472;
+	border-color: #f4b2a6;
+	-webkit-transition: all .35s;
+	-moz-transition: all .35s;
+	transition: all .35s
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active,
+	.btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary
+	{
+	color: #fff;
+	background-color: #FFD9EC;
+	border-color: #ed431f
+}
+
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus,
+	.btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover,
+	.btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus,
+	.btn-primary[disabled]:active, .btn-primary[disabled]:focus,
+	.btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active,
+	fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active,
+	fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover
+	{
+	background-color: #FFEBFE;
+	border-color: #FFEBFE
+}
+
+.btn-primary .badge {
+	color: #FFEBFE;
+	background-color: #fff
+}
+
+.btn {
+	border: none;
+	border-radius: 300px;
+	font-weight: 700;
+	text-transform: uppercase
+}
+
+.btn-xl {
+	padding: 15px 30px;
+	margin: 50px 50px;
+}
+
+::-moz-selection {
+	color: #fff;
+	text-shadow: none;
+	background: #222
+}
+
+::selection {
+	color: #fff;
+	text-shadow: none;
+	background: #222
+}
+
+img::selection {
+	color: #fff;
+	background: 0 0
+}
+
+img::-moz-selection {
+	color: #fff;
+	background: 0 0
+}
+
+.menubar {
+	background: rgba(255, 255, 255, 0.4);
+	border: none;
+	font: 'Nanum Gothic', serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.menubar ul {
+	height: 60px;
+	list-style: none;
+}
+
+.menubar li {
+	float: left;
+	padding: 0px;
+}
+
+.menubar li a {
+	color: #000000;
+	display: block;
+	font-weight: normal;
+	line-height: 50px;
+	margin: 0px;
+	padding: 0px 15px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 15px;
+}
+
+.menubar li a:hover {
+	background: #f2f2f2;
+	color: #000000 text-decoration: none;
+}
+
+.menubar ul li:hover a {
+	background: #f2f2f2;
+	border: 0.5px solid #f2f2f2;
+	color: #000000;
+	text-decoration: none;
+}
+
+.menubar li ul {
+	background: #ffffff;
+	display: none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	position: absolute;
+	width: 150px;
+	z-index: 200;
+	border-radius: 17px;
+	/*top:1em;
+/*left:0;*/
+}
+
+.menubar li:hover ul {
+	display: block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+}
+
+.menubar li li {
+	display: block;
+	float: none;
+	margin: 0px;
+	padding: 0px;
+	width: 150px;
+}
+
+.menubar li:hover li a {
+	background: none;
+}
+
+.menubar li ul a {
+	display: block;
+	height: 50px;
+	font-size: 12px;
+	font-style: normal;
+	margin: 0px;
+	text-align: left;
+}
+
+.menubar li ul a:hover, .menubar li ul li:hover a {
+	background: #f2f2f2;
+	border: 1px solid black;
+	color: #000000;
+	text-decoration: none;
+	border-radius: 15px;
+}
+
+.log input[type="text"], input[type="password"] {
+	background: none;
+	display: block;
+	float: left;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-top: 7px;
+	margin-right: 15px;
+	width: 100%;
+	font-family: "Open Sans", sans-serif;
+	font-size: 3px;
+	padding: 8px 8px 8px 8px;
+	/*   위 오 아래 왼 */
+	border: none;
+	-webkit-transition: border 0.3s;
+	-moz-transition: border 0.3s;
+	-o-transition: border 0.3s;
+	transition: border 0.3s;
+}
+
+::-webkit-input-placeholder {
+	color: black;
+	transition: opacity 250ms ease-in-out;
+}
+
+.log input[type="text"]:focus, input[type="password"]:focus {
+	outline: none;
+	border-bottom: solid 1px #000000;
+}
+
+.log input[type="submit"], .log button {
+	width: 80%;
+	background: none;
+	display: block;
+	cursor: pointer;
+	font-family: "Open Sans", sans-serif;
+	font-size: 3px;
+	padding: 3px 3px;
+	display: inline-block;
+	margin: 3px 3px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	border: 1px solid #000;
+	color: #000;
+}
+
+.log input[type="submit"]:after, .log button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.log input[type="submit"]:hover, .log input[type="submit"]:active, .log button:hover,
+	.log button:active {
+	color: #000;
+	background: rgba(255, 255, 255, 0.5);
+}

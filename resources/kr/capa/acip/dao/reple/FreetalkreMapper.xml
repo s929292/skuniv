@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Freetalkre">
+	<resultMap type="Freetalkre" id="FreetalkreResultMap">
+		<result column="fnum" property="fnum" />
+		<result column="frenum" property="frenum" />
+		<result column="mid" property="mid" />
+		<result column="frecontent" property="frecontent" />
+		<result column="freregdate" property="freregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<select id="selectFreetalkreAll" parameterType="Freetalkre"
+		resultMap="FreetalkreResultMap">
+		select * from freetalkre
+		where fnum = #{fnum} and lnum=#{lnum}
+		order by frenum asc
+	</select> 
+
+	<insert id="insertFreetalkre" parameterType="Freetalkre">
+		insert into
+		freetalkre(fnum, frenum, mid, frecontent, freregdate, lnum)
+		values(#{fnum},freseq.nextval,#{mid}, #{frecontent},sysdate,#{lnum})
+	</insert>
+
+	<update id="updateFreetalkre" parameterType="Freetalkre">
+		update freetalkre 
+		set	frecontent=#{frecontent}, creregdate=sysdate 
+		where frenum=#{frenum}
+	</update>
+	
+	<delete id="deleteFreetalkre" parameterType="int">
+		delete from freetalkre
+		where frenum=#{frenum}
+	</delete>
+
+</mapper>  
+
+      

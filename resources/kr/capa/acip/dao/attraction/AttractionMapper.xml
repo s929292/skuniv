@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 한매퍼파일에 id가같으면안된다 따라서 namespace로 구별되게함 -->
+<!-- dao가 실행할때 찾을 수 있도록 namespace를 맞춘다 -->
+
+
+<mapper namespace="kr.capa.acip.Attraction">
+
+	
+
+
+
+	<resultMap type="Attraction" id="AttractionResultMap">
+		<result column="anum" property="anum" />
+		<result column="aname" property="aname" />
+		<result column="alocation" property="alocation" />
+		<result column="aadmitnum" property="aadmitnum" />
+		<result column="aruntime" property="aruntime" />
+		<result column="awaitnum" property="awaitnum" />
+		<result column="awaittime" property="awaittime" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+	
+	<resultMap type="Attraction" id="AttractionResultMap2">
+		<result column="awaitnum" property="awaitnum" />
+	</resultMap>
+	
+	<resultMap type="Attraction" id="AttractionResultMap3">
+		<result column="aname" property="aname" />
+		<result column="awaittime" property="awaittime" />
+	</resultMap>
+	<!-- config.xml에서 alias태그에서 Attraction로했으니까 개꿀 -->
+
+	<!-- 기구추가 / 대기인원,대기시간제외하고 값받는다. -->
+	<insert id="insertAttraction" parameterType="Attraction">
+		insert into
+		attraction(anum,aname,alocation,aadmitnum,aruntime,lnum)
+		values(#{anum},#{aname},#{alocation},#{aadmitnum},#{aruntime},#{lnum})
+	</insert>
+
+	<!-- 기구번호값으로 기구검색 -->
+	<select id="selectAttraction" parameterType="Attraction"
+		resultMap="AttractionResultMap">
+	<![CDATA[
+		select anum,aname,alocation,aadmitnum,aruntime,awaitnum,awaittime,lnum
+		from attraction 
+		where anum=#{anum} and lnum=#{lnum}
+	]]>
+	</select>
+
+	<!-- 기구번호값받아 대기인원변경 -->
+	<update id="updateWaitnum" parameterType="Attraction">
+	<![CDATA[
+		update attraction set awaitnum=#{awaitnum}
+		where anum=#{anum} and lnum=#{lnum}
+	]]>
+	</update>
+
+	<!-- 대기인원으로 시간계산후 기구번호값받아 대기시간변경 -->
+	<update id="updateWaittime" parameterType="Attraction">
+	<![CDATA[
+		update attraction set awaittime=#{awaittime}
+		where anum=#{anum} and lnum=#{lnum}
+	]]>
+	</update>
+
+	<!-- 모든 기구 출력 -->
+	<select id="selectAll" resultMap="AttractionResultMap">
+	<![CDATA[
+		select * from attraction order by anum asc
+	]]>
+	</select>
+
+	<select id="totalwaitnum" parameterType="int" resultType="int">
+		select sum(awaitnum) as awaitnum from attraction where lnum=#{lnum}
+	</select>
+
+	<select id="recommendwaittime" parameterType="Attraction" resultMap="AttractionResultMap3">
+		select aname, awaittime from attraction where lnum = #{lnum} and anum=#{anum}
+	</select>
+	
+</mapper>

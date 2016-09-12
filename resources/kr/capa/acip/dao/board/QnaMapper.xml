@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Qna">
+ 	<resultMap type="Qna" id="QnaResultMap"> 
+		<result column="qnum" property="qnum" />
+		<result column="mid" property="mid" />
+		<result column="qtitle" property="qtitle" />
+		<result column="qcontent" property="qcontent" />
+		<result column="qregdate" property="qregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<insert id="insertQna" parameterType="Qna">
+		insert into Review(qnum, mid, qtitle, qcontent, qregdate, lnum)
+		values(qseq.nextval,
+		#{mid},#{qtitle},#{qcontent},sysdate,#{lnum})
+	</insert>
+
+	<select id="selectQna" parameterType="java.lang.String" 
+		resultMap="QnaResultMap">
+		select qnum, mid,qtitle, qcontent, lnum from Qna where mid = #{mid} AND lnum = #{lnum}
+	</select>
+	
+	<select id="selectQna2" parameterType="java.lang.String" 
+		resultMap="QnaResultMap">
+		select qnum, mid,qtitle, qcontent, lnum from Qna where qtitle = #{qtitle} AND lnum = #{lnum}
+	</select>
+
+ 	<delete id="deleteQna" parameterType="Qna">
+		delete from Qna where qnum = #{qnum}
+ 	</delete>
+
+ 	<update id="updateQna" parameterType="Qna">
+ 		update Qna set qtitle = #{qtitle}, qcontent = #{qcontent}, qregdate = sysdate where qnum = 
+ 		#{qnum} 
+ 	</update> 
+
+</mapper>  

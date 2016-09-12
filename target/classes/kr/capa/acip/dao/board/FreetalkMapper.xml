@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Freetalk">
+ 	<resultMap type="Freetalk" id="FreetalkResultMap"> 
+		<result column="fnum" property="fnum" />
+		<result column="mid" property="mid" />
+		<result column="ftitle" property="ftitle" />
+		<result column="fcontent" property="fcontent" />
+		<result column="fregdate" property="fregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<insert id="insertFreetalk" parameterType="Freetalk">
+		insert into freetalk(fnum, mid, ftitle, fcontent, fregdate, lnum)
+		values(fseq.nextval,
+		#{mid},#{ftitle},#{fcontent},sysdate,#{lnum})
+	</insert>
+
+	<select id="selectFreetalk" parameterType="java.lang.String" 
+		resultMap="FreetalkResultMap">
+		select fnum, mid,ftitle, fcontent, lnum from freetalk where mid = #{mid} AND lnum = #{lnum}
+	</select>
+	
+	<select id="selectFreetalk2" parameterType="java.lang.String" 
+		resultMap="FreetalkResultMap">
+		select fnum, mid,ftitle, fcontent, lnum from freetalk where ftitle = #{ftitle} AND lnum = #{lnum}
+	</select>
+	
+	<select id="selectFreetalkAll" resultMap="FreetalkResultMap">
+		select * from freetalk
+	</select>
+
+ 	<delete id="deleteFreetalk" parameterType="Freetalk">
+		delete from freetalk where fnum = #{fnum}
+ 	</delete>
+
+ 	<update id="updateFreetalk" parameterType="Freetalk">
+ 		update freetalk set ftitle = #{ftitle}, fcontent = #{fcontent}, fregdate = sysdate where fnum = 
+ 		#{fnum} 
+ 	</update> 
+
+</mapper>  
+
+      

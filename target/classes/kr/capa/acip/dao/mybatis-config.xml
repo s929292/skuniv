@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+   PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="kr.capa.acip.vo.land.LandVO" alias="Land" />
+		<typeAlias type="kr.capa.acip.vo.attraction.AttractionVO" alias="Attraction" />
+		<typeAlias type="kr.capa.acip.vo.member.MemberVO" alias="Member" />
+		<typeAlias type="kr.capa.acip.vo.board.EventVO" alias="Event" />
+		<typeAlias type="kr.capa.acip.vo.board.FreetalkVO" alias="Freetalk" />
+		<typeAlias type="kr.capa.acip.vo.board.ReviewVO" alias="Review" />
+		<typeAlias type="kr.capa.acip.vo.board.QnaVO" alias="Qna" />
+		<typeAlias type="kr.capa.acip.vo.board.ComplainVO" alias="Complain" />
+		<typeAlias type="kr.capa.acip.vo.reple.FreetalkreVO" alias="Freetalkre" />
+		<typeAlias type="kr.capa.acip.vo.reple.ReviewreVO" alias="Reviewre" />
+		<typeAlias type="kr.capa.acip.vo.reple.QnareVO" alias="Qnare" />
+		<typeAlias type="kr.capa.acip.vo.reple.ComplainreVO" alias="Complainre" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="kr/capa/acip/dao/land/LandMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/attraction/AttractionMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/member/MemberMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/board/EventMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/board/FreetalkMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/board/ReviewMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/board/QnaMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/board/ComplainMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/reple/FreetalkreMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/reple/ReviewreMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/reple/QnareMapper.xml" />
+		<mapper resource="kr/capa/acip/dao/reple/ComplainreMapper.xml" />		
+	</mappers>
+</configuration>

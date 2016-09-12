@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Reviewre">
+	<resultMap type="Reviewre" id="ReviewreResultMap">
+		<result column="rnum" property="rnum" />
+		<result column="rrenum" property="rrenum" />
+		<result column="mid" property="mid" />
+		<result column="rrecontent" property="rrecontent" />
+		<result column="rreregdate" property="rreregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<select id="selectReviewreAll" parameterType="Reviewre"
+		resultMap="ReviewreResultMap">
+		select * from reviewre
+		where rnum = #{rnum} and lnum=#{lnum}
+		order by rrenum asc
+	</select> 
+
+	<insert id="insertReviewre" parameterType="Reviewre">
+		insert into
+		reviewre(rnum, rrenum, mid, rrecontent, rreregdate, lnum)
+		values(#{rnum},rreseq.nextval,#{mid}, #{rrecontent},sysdate,#{lnum})
+	</insert>
+
+	<update id="updateReviewre" parameterType="Reviewre">
+		update reviewre 
+		set	rrecontent=#{rrecontent}, rreregdate=sysdate 
+		where rrenum=#{rrenum}
+	</update>
+	
+	<delete id="deleteReviewre" parameterType="int">
+		delete from reviewre
+		where rrenum=#{rrenum}
+	</delete>
+
+</mapper>  
+
+      

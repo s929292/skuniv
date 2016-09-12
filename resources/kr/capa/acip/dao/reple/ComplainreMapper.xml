@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.capa.acip.Complainre">
+	<resultMap type="Complainre" id="ComplainreResultMap">
+		<result column="cnum" property="cnum" />
+		<result column="crenum" property="crenum" />
+		<result column="crecontent" property="crecontent" />
+		<result column="creregdate" property="creregdate" />
+		<result column="lnum" property="lnum" />
+	</resultMap>
+
+	<select id="selectComplainreAll" parameterType="Complainre"
+		resultMap="ComplainreResultMap">
+	select * from complainre where cnum=#{cnum} and lnum=#{lnum}
+		
+	</select>
+
+	<insert id="insertComplainre" parameterType="Complainre">
+		insert into
+		complainre(cnum, crenum, crecontent, creregdate, lnum)
+		values(#{cnum},creseq.nextval,#{crecontent},sysdate,#{lnum})
+	</insert>
+
+	<update id="updateComplainre" parameterType="Complainre">
+		update complainre
+		set crecontent=#{crecontent}, creregdate=sysdate
+		where crenum=#{crenum}
+	</update>
+
+	<delete id="deleteComplainre" parameterType="int">
+		delete from
+		complainre
+		where crenum=#{crenum}
+	</delete>
+
+</mapper>  
+
+      

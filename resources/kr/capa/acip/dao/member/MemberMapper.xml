@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="kr.capa.acip.Member">
+ 	<resultMap type="Member" id="MemberResultMap">
+		<result column="mid"	property="mid"/>
+		<result column="mpassword" property="mpassword"/>
+		<result column="mname" property="mname"/>
+		<result column="mbirth"	property="mbirth"/>
+		<result column="mgender"	property="mgender"/>
+		<result column="mphone"	property="mphone"/>
+		<result column="memail" property="memail"/>
+	</resultMap>
+	
+	    
+    <select id="selectMember" parameterType="java.lang.String" resultMap="MemberResultMap" >
+	<![CDATA[
+		select mid, mpassword, mname, mbirth, mgender, mphone, memail from member where mid=#{value}
+	]]>
+	</select>
+		
+	<insert id="insertMember" parameterType="Member">
+	<![CDATA[
+		insert into member(mid, mpassword, mname, mbirth, mgender, mphone, memail, mregdate) 
+		values(#{mid},#{mpassword},#{mname},#{mbirth},#{mgender},#{mphone},#{memail},sysdate)
+	]]>	
+	</insert>
+
+    <delete id="deleteMember" parameterType="Member">
+	<![CDATA[
+		delete from member where mid=#{mid}
+	]]>
+	</delete>
+	
+ 	<update id="updateMember" parameterType="Member">
+ 	<![CDATA[
+ 		update member set mpassword=#{mpassword} where mid=#{mid}
+ 	]]>
+	</update>
+    
+    
+    
+ </mapper>

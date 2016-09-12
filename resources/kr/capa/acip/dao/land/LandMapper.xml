@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 한매퍼파일에 id가같으면안된다 따라서 namespace로 구별되게함 -->
+<!-- dao가 실행할때 찾을 수 있도록 namespace를 맞춘다 -->
+
+<mapper namespace="kr.capa.acip.Land">
+
+	<resultMap type="Land" id="LandResultMap">
+		<result column="lnum" property="lnum" />
+		<result column="lname" property="lname" />
+	</resultMap>
+	<!-- config.xml에서 alias태그에서 Land로했으니까 개꿀 -->
+
+	<!-- 랜드추가 / 랜드번호,랜드이름을 받는다 -->
+	<insert id="insertLand" parameterType="Land">
+		insert into land(lnum,lname)
+		values(#{lnum},#{lname})
+	</insert>
+	
+	<!-- 랜드번호값으로 랜드선택 -->
+	<select id="selectLand" parameterType="java.lang.Integer" resultMap="LandResultMap">
+	<![CDATA[
+		select lnum,lname 
+		from land 
+		where lnum=#{value}
+	]]>
+	</select>
+	
+	<!-- 랜드번호값으로 랜드전체선택 -->
+	<select id="selectAll" resultMap="LandResultMap">
+	<![CDATA[
+		select * 
+		from land order by lnum asc
+	]]>
+	</select>
+</mapper>
